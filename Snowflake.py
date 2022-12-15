@@ -8,7 +8,7 @@ cols, rows  = shutil.get_terminal_size()
 
 def create_lineofsnow(cols, x=0):
     lineofsnow = []
-    for i in range(random.randint(x, cols)):
+    for i in range(random.randint(0, cols-x)):
         rand_a = random.randint(0,2)
         if rand_a == 0:
             lineofsnow.append("*")
@@ -26,7 +26,7 @@ def makeitsnow():
     screenofsnow = []
     while True:
         os.system('cls')
-        screenofsnow.insert(0, create_lineofsnow(cols))
+        screenofsnow.insert(0, create_lineofsnow(cols, 90))
         if len(screenofsnow) > rows:
             screenofsnow.pop()
         for line in screenofsnow:
